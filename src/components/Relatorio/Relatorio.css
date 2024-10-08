@@ -1,0 +1,67 @@
+
+.displayRelatorio {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.displayRelatorio .leftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45%;
+    background-color: #f0f0f0;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.displayRelatorio .rightContainer {
+    width: 50%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.displayRelatorio h1 {
+    margin-bottom: 20px;
+}
+
+.displayRelatorio label {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.displayRelatorio select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.displayRelatorio button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.displayRelatorio button:hover {
+    background-color: #0056b3;
+}
+
+.displayRelatorio .error {
+    color: red;
+    margin-top: 10px;
+}

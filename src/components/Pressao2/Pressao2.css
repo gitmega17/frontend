@@ -1,0 +1,33 @@
+/* SensorDataChart.css */
+
+/* Barra de opções no cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between; /* Centraliza os botões horizontalmente */
+    padding: 10px;
+    gap: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .bt-grupo{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Container para os gráficos */
+  .chart-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os gráficos envolvam em múltiplas linhas */
+    gap: 20px; /* Espaçamento entre os gráficos */
+    padding: 20px;
+    justify-content: center; /* Centraliza os gráficos horizontalmente */
+  }
+  
+  /* Estilo para os gráficos */
+  .canvas {
+    width: 600px !important;
+    height: 400px !important;
+  }
+

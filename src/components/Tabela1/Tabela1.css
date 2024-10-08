@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+.head-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #dadada;
+}
+
+/* Estilos gerais da tabela */
+.sensor-table-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+    color: #333;
+}
+
+.sensor-table-container h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #020202;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Estilo base para todas as tabelas */
+.sensor-table {
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Cabeçalho geral */
+.sensor-table thead {
+    background-color: #555657;
+    color: #000;
+}
+
+.sensor-table th, .sensor-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #c1c3c4;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Estilos específicos da Tabela 1 */
+.tabela1 thead tr {
+    background-color: #72b1f5; /* Azul para a primeira linha da Tabela 1 */
+}
+
+.tabela1 td:hover {
+    background-color: #72b1f5; /* Hover azul para as células da Tabela 1 */
+}
+
+/* Estilos específicos da Tabela 2 */
+.tabela2 thead tr {
+    background-color: #f36a6a; /* Vermelho para a primeira linha da Tabela 2 */
+}
+
+.tabela2 td:hover {
+    background-color: #f36a6a; /* Hover vermelho para as células da Tabela 2 */
+}
+
+/* Zebra striping (linhas alternadas) */
+.sensor-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sensor-table th, .sensor-table td {
+        padding: 10px 8px;
+    }
+}
+
+/* Remover borda inferior na última linha */
+.sensor-table tbody tr:last-child td {
+    border-bottom: none;
+}
