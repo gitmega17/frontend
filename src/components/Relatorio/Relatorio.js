@@ -114,7 +114,7 @@ const Relatorio = () => {
     return (
         <div>
             <header className='head-menu'>
-                <Link to="/SelectMotor">
+                <Link to="/Home">
                     <IconButton aria-label="home" size="large" color="primary"
                     ><ArrowBackIcon fontSize="50" />
                     </IconButton>

@@ -8,25 +8,29 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SettingsIcon from '@mui/icons-material/Settings';
 
 const Tabela1 = () => {
-    const [dadosMotores, setDadosMotores] = useState([]);
+    const [dadosMotores, setDadosMotores] = useState([]); // Estado inicial como array vazio
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
 
     useEffect(() => {
         const fetchDadosMotores = async () => {
             try {
-
                 const token = localStorage.getItem('authToken');
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/coletando_dados_motores`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/coletando_dados_motores`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
-                setDadosMotores(response.data);
+
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar dados dos motores.');
+                }
+
+                const data = await response.json(); // Convertendo a resposta para JSON
+                setDadosMotores(data); // Definindo os dados no estado
             } catch (err) {
                 setError('Erro ao buscar dados dos motores.');
-                console.error(err.response ? err.response.data : err.message);
+                console.error(err.message);
             } finally {
                 setLoading(false);
             }
@@ -43,29 +47,30 @@ const Tabela1 = () => {
         return <p>{error}</p>;
     }
 
-    // Filtrar os dados para exibir apenas os que pertencem ao MotorID = 'Motor01'
-    const dadosFiltrados = dadosMotores.filter(motor => motor.motorid === 'Motor01');
+    // Verifique se dadosMotores é um array antes de filtrar
+    const dadosFiltrados = Array.isArray(dadosMotores) 
+        ? dadosMotores.filter(motor => motor.motorid === 'Motor01') 
+        : [];
 
     return (
         <div>
             <header className='head-menu'>
                 <Link to="/SelectTabela">
-                    <IconButton aria-label="home" size="large" color="primary"
-                    ><ArrowBackIcon fontSize="50" />
+                    <IconButton aria-label="home" size="large" color="primary">
+                        <ArrowBackIcon fontSize="50" />
                     </IconButton>
                 </Link>
 
                 <Link to="/">
-                    <IconButton aria-label="config" size="large" color="primary"
-                    ><SettingsIcon fontSize="50" />
+                    <IconButton aria-label="config" size="large" color="primary">
+                        <SettingsIcon fontSize="50" />
                     </IconButton>
                 </Link>
-
             </header>
 
             <div className="sensor-table-container">
                 <h1>Dados dos Motores</h1>
-                <table className="sensor-table tabela1"> {/* Adicionei as classes aqui */}
+                <table className="sensor-table tabela1">
                     <thead>
                         <tr>
                             <th>ColetaID</th>
