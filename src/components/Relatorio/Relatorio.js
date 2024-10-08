@@ -39,7 +39,7 @@ const Relatorio = () => {
         }
 
         try {
-            onst response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/gerar_relatorio`, {  // Usando a variável de ambiente
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/gerar_relatorio`, {  // Usando a variável de ambiente
                 MotorID: MotorID,
                 parametro,
             });
