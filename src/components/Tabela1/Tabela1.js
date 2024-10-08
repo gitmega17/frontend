@@ -18,11 +18,10 @@ const Tabela1 = () => {
             try {
 
                 const token = localStorage.getItem('token');
-
-                const response = await axios.get('https://backend-clu7.onrender.com/coletando_dados_motores', {
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/coletando_dados_motores`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
                 });
                 setDadosMotores(response.data);
             } catch (err) {

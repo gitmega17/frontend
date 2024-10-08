@@ -12,8 +12,11 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    // Use a variável de ambiente para a URL do backend
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
     try {
-      const response = await axios.post('https://backend-clu7.onrender.com/login', { username, password });
+      const response = await axios.post(`${backendUrl}/login`, { username, password });
       const { token } = response.data;
 
       // Armazenar o token no localStorage ou sessionStorage

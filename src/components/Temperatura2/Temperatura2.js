@@ -22,16 +22,10 @@ const Temperatura2 = () => {
     try {
       
       const token = localStorage.getItem('token');
-      if (!token) {
-        console.error('Token não encontrado, redirecionando para login...');
-        navigate('/login'); // Redireciona para a página de login
-        return;
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/coletando_dados_motores`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
       }
-
-      const response = await fetch('https://backend-clu7.onrender.com/coletando_dados_motores', {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
       });
       if (!response.ok) {
         throw new Error('Erro ao buscar dados: ' + response.statusText);

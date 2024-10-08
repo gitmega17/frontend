@@ -12,8 +12,11 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
+    // Use a variável de ambiente para a URL do backend
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
     try {
-      const response = await axios.post('https://backend-clu7.onrender.com/cadastro', { username, password });
+      const response = await axios.post(`${backendUrl}/cadastro`, { username, password });
       setMessage('Usuário registrado com sucesso. Agora você pode fazer login!');
     } catch (err) {
       console.error('Erro ao registrar usuário:', err);

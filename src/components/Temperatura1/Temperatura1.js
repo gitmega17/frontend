@@ -19,8 +19,7 @@ const Temperatura1 = () => {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem('token');
-  
-      const response = await fetch('https://backend-clu7.onrender.com/coletando_dados_motores', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/coletando_dados_motores`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
