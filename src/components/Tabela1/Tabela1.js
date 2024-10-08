@@ -17,7 +17,7 @@ const Tabela1 = () => {
         const fetchDadosMotores = async () => {
             try {
 
-                const token = localStorage.getItem('token');
+                const token = localStorage.getItem('authToken');
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/coletando_dados_motores`, {
       headers: {
         'Authorization': `Bearer ${token}`
