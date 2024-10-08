@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';  // Importando o CSS
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -11,28 +11,24 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
-    // Use a variável de ambiente para a URL do backend
     const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
     try {
       const response = await axios.post(`${backendUrl}/login`, { username, password });
       const { token } = response.data;
 
-      // Armazenar o token no localStorage ou sessionStorage
+      // Armazenar o token no localStorage
       localStorage.setItem('authToken', token);
 
-      // Redirecionar para a página principal da aplicação (Home)
-      navigate('/');  // Redireciona para a página inicial
+      // Marcar como autenticado chamando onLogin
+      onLogin();
+
+      // Redirecionar para a página principal (Home)
+      navigate('/');  
     } catch (err) {
       console.error('Erro ao fazer login:', err);
       setError('Erro ao fazer login. Verifique suas credenciais.');
     }
-  };
-
-  // Função para redirecionar para a página de registro
-  const handleRegisterRedirect = () => {
-    navigate('/register');
   };
 
   return (
@@ -59,10 +55,9 @@ const Login = () => {
         </div>
         {error && <p className="error">{error}</p>}
         <button type="submit">Login</button>
-        {/* Seção de redirecionamento para registro */}
         <div>
           <p>Não possui registro?</p>
-          <button type="button" onClick={handleRegisterRedirect}>Registre-se</button>
+          <button type="button" onClick={() => navigate('/register')}>Registre-se</button>
         </div>
       </form>
     </div>
