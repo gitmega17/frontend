@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Chart from 'chart.js/auto';
-import './Frequencia1.css';
 import Button from '@mui/material/Button';
 
 import IconButton from '@mui/material/IconButton';
