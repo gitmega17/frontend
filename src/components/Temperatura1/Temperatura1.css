@@ -1,84 +1,31 @@
 .header {
-  display: flex;
-  justify-content: space-between; /* Centraliza os botões horizontalmente */
-  padding: 10px;
-  gap: 10px;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
-}
-
-.bt-grupo {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Container para os gráficos */
-.chart-container {
-  display: flex;
-  flex-wrap: wrap; /* Permite que os gráficos envolvam em múltiplas linhas */
-  gap: 20px; /* Espaçamento entre os gráficos */
-  padding: 20px;
-  justify-content: center; /* Centraliza os gráficos horizontalmente */
-}
-
-/* Estilo para os gráficos */
-.canvas {
-  width: 600px !important;
-  height: 400px !important;
-}
-
-/* Media Queries para responsividade */
-@media (max-width: 1024px) {
-  .canvas {
-      width: 500px !important;
-      height: 350px !important; /* Reduz o tamanho dos gráficos em telas médias */
+    display: flex;
+    justify-content: space-between; /* Centraliza os botões horizontalmente */
+    padding: 10px;
+    gap: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
   }
 
+  .bt-grupo{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+
+  /* Container para os gráficos */
   .chart-container {
-      gap: 15px; /* Ajusta o espaçamento entre gráficos */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os gráficos envolvam em múltiplas linhas */
+    gap: 20px; /* Espaçamento entre os gráficos */
+    padding: 20px;
+    justify-content: center; /* Centraliza os gráficos horizontalmente */
   }
-}
-
-@media (max-width: 768px) {
+  
+  /* Estilo para os gráficos */
   .canvas {
-      width: 400px !important;
-      height: 300px !important; /* Mais redução para dispositivos móveis */
+    width: 600px;
+    height: 400px;
   }
 
-  .header {
-      flex-direction: column;
-      align-items: center; /* Coloca os itens da header em coluna e centraliza */
-  }
-
-  .bt-grupo {
-      flex-direction: column;
-      gap: 10px; /* Alinha botões em coluna em telas menores */
-  }
-
-  .chart-container {
-      padding: 10px; /* Reduz o padding para telas menores */
-      gap: 10px; /* Reduz o espaçamento entre gráficos */
-  }
-}
-
-@media (max-width: 480px) {
-  .canvas {
-      width: 100% !important;
-      height: auto !important; /* Os gráficos ocupam 100% da largura disponível */
-  }
-
-  .chart-container {
-      flex-direction: column;
-      padding: 5px; /* Reduz o padding ainda mais para dispositivos muito pequenos */
-      gap: 5px; /* Ajusta o espaçamento para dispositivos pequenos */
-  }
-
-  .bt-grupo {
-      gap: 5px; /* Diminui o espaçamento entre botões */
-  }
-
-  .header {
-      padding: 5px; /* Ajuste de padding para header */
-  }
-}
