@@ -1,4 +1,4 @@
-.displayHome{
+.displayHome {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,13 +10,27 @@
 .displayHome .logo {
     width: 300px;
     margin-bottom: 100px;
-  }
-
-
-
-.botaogrupo{
-    display: flex;
-    gap: 30px;
-    
 }
 
+.botaogrupo {
+    display: flex;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .displayHome {
+        height: auto; /* Permite que o contêiner se ajuste ao conteúdo */
+        padding: 20px; /* Adiciona um pouco de espaçamento */
+    }
+
+    .displayHome .logo {
+        width: 80%; /* Ajusta a largura da logo em telas menores */
+        margin-bottom: 50px; /* Diminui a margem inferior em telas menores */
+    }
+
+    .botaogrupo {
+        flex-direction: column; /* Altera a direção do grupo de botões para coluna */
+        align-items: center; /* Centraliza os botões na coluna */
+        gap: 15px; /* Reduz o espaço entre os botões */
+    }
+}

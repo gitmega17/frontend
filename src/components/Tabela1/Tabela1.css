@@ -7,7 +7,6 @@
     background-color: #dadada;
 }
 
-/* Estilos gerais da tabela */
 .sensor-table-container {
     font-family: 'Arial', sans-serif;
     background-color: #ffffff;
@@ -25,7 +24,6 @@
     margin-bottom: 20px;
 }
 
-/* Estilo base para todas as tabelas */
 .sensor-table {
     font-family: "Oswald", sans-serif;
     width: 100%;
@@ -35,7 +33,6 @@
     background-color: #fff;
 }
 
-/* Cabeçalho geral */
 .sensor-table thead {
     background-color: #555657;
     color: #000;
@@ -50,37 +47,32 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-/* Estilos específicos da Tabela 1 */
 .tabela1 thead tr {
-    background-color: #72b1f5; /* Azul para a primeira linha da Tabela 1 */
+    background-color: #72b1f5;
 }
 
 .tabela1 td:hover {
-    background-color: #72b1f5; /* Hover azul para as células da Tabela 1 */
+    background-color: #72b1f5;
 }
 
-/* Estilos específicos da Tabela 2 */
 .tabela2 thead tr {
-    background-color: #f36a6a; /* Vermelho para a primeira linha da Tabela 2 */
+    background-color: #f36a6a;
 }
 
 .tabela2 td:hover {
-    background-color: #f36a6a; /* Hover vermelho para as células da Tabela 2 */
+    background-color: #f36a6a;
 }
 
-/* Zebra striping (linhas alternadas) */
 .sensor-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .sensor-table th, .sensor-table td {
         padding: 10px 8px;
     }
 }
 
-/* Remover borda inferior na última linha */
 .sensor-table tbody tr:last-child td {
     border-bottom: none;
 }

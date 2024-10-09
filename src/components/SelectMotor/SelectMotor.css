@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 
-.display{
+.display {
     font-family: "Oswald", sans-serif;
     display: flex;
     flex-direction: column;
@@ -21,17 +21,17 @@
     margin-top: 50px;
 }
 
-h1{
+h1 {
     font-size: 30px;
-    color:#1c3f60;
-
+    color: #1c3f60;
 }
-.display .botao-gap{
+
+.display .botao-gap {
     display: flex;
     gap: 20px;
 }
 
-.botao-motor{
+.botao-motor {
     font-family: "Oswald", sans-serif;
     height: 70px;
     width: 200px;
@@ -41,4 +41,25 @@ h1{
     color: white;
     border-radius: 10px;
     border: none;
+}
+
+@media (max-width: 768px) {
+    .display .logo {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .botao-motor {
+        height: 60px;
+        width: 150px;
+        font-size: 28px;
+    }
+
+    .display .botao-gap {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

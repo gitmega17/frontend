@@ -5,12 +5,14 @@
     justify-content: center;
     height: 100vh;
     background-color: #f5f5f5;
+    padding: 10px; /* Adicionado para evitar cortes em telas pequenas */
 }
 
 .loginContainer h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #333;
+    text-align: center; /* Garante que o título fique centralizado em telas menores */
 }
 
 .loginContainer form {
@@ -74,3 +76,45 @@
     margin-bottom: 20px;
 }
 
+/* Media queries para telas menores */
+@media (max-width: 768px) {
+    .loginContainer h1 {
+        font-size: 2rem; /* Reduzindo o tamanho do título em telas menores */
+    }
+
+    .loginContainer form {
+        padding: 15px; /* Reduzindo o padding para telas menores */
+        max-width: 90%; /* Diminuindo a largura máxima do form */
+    }
+
+    .loginContainer form button {
+        font-size: 1rem; /* Ajustando o tamanho da fonte no botão */
+        padding: 10px;
+    }
+
+    .loginContainer form input {
+        font-size: 0.9rem; /* Reduzindo um pouco o tamanho da fonte nos inputs */
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginContainer h1 {
+        font-size: 1.8rem; /* Mais ajuste para telas muito pequenas */
+    }
+
+    .loginContainer form {
+        padding: 10px; /* Ajuste de padding para telas pequenas */
+        max-width: 100%; /* Deixar o form ocupar quase toda a tela */
+    }
+
+    .loginContainer form button {
+        font-size: 0.9rem; /* Reduzindo mais o tamanho da fonte do botão */
+        padding: 8px;
+    }
+
+    .loginContainer form input {
+        font-size: 0.8rem; /* Reduzindo mais o tamanho da fonte dos inputs */
+        padding: 7px;
+    }
+}

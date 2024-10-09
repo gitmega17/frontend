@@ -1,6 +1,6 @@
-
 .displayRelatorio {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: 100vh;
     background-color: #f9f9f9;
@@ -64,4 +64,25 @@
 .displayRelatorio .error {
     color: red;
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .displayRelatorio {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .displayRelatorio .leftContainer,
+    .displayRelatorio .rightContainer {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .displayRelatorio .leftContainer {
+        padding: 15px;
+    }
+
+    .displayRelatorio .rightContainer {
+        padding: 15px;
+    }
 }
